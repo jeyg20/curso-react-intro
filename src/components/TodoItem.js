@@ -1,9 +1,8 @@
-function TodoItem(props) {
+function TodoItem({ text, completed }) {
   return (
     <li>
-      <span>V</span>
-      <p>{props.text}</p>
-      <span>X</span>
+      <p>{text}</p>
+      <span>{ completed? '✔️' : '❌'}</span>
     </li>
   )
 }
