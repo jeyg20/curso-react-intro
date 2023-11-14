@@ -1,7 +1,7 @@
-//import logo from './platzi.webp';
 import { TodoCounter } from './components/TodoCounter';
 import { TodoSearchBar } from './components/TodoSearchBar';
 import { TodoList } from './components/TodoList';
+import { TodoItem } from './components/TodoItem';
 import { TodoCreateButton } from './components/TodoCreateButton';
 import './App.css';
 
@@ -18,16 +18,6 @@ function App() {
       <TodoCreateButton/>
     </div>
   );
-}
-
-function TodoItem(props) {
-  return (
-    <li>
-      <span>V</span>
-      <p>{props.text}</p>
-      <span>X</span>
-    </li>
-  )
 }
 
 export default App;
