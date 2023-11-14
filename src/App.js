@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <TodoCounter />
+      <TodoCounter completed={3} total={5}/>
       <TodoSearchBar />
       <TodoList>
         <TodoItem />

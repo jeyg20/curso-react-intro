@@ -1,6 +1,6 @@
-function TodoCounter() {
+function TodoCounter({ total, completed }) {
   return (
-    <h1>3 items left</h1>
+    <h1>You have completed {completed}  of {total}</h1>
   )
 }
 
