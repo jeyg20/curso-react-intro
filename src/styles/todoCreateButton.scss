@@ -1,0 +1,19 @@
+@import 'App';
+
+.add-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  
+  button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+  
+    .add-btn {
+      width: 60px;
+      height: 60px;
+      color: $primary-color;
+    }
+  }
+}
