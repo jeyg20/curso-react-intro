@@ -1,8 +1,11 @@
+import '../styles/todoItem.scss'
+
 function TodoItem({ text, completed }) {
   return (
     <li>
+      <span>{ completed? '✔️' : '⭕'}</span>
       <p>{text}</p>
-      <span>{ completed? '✔️' : '❌'}</span>
+      <span>❌</span>
     </li>
   )
 }
