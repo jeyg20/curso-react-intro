@@ -1,0 +1,11 @@
+@import 'App';
+
+h1 {
+  font-size: 28rem;
+  font-weight: 700;
+  color: $primary-color;
+  background: linear-gradient(120deg , $primary-color, #8A49CA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
