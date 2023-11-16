@@ -6,4 +6,8 @@ ul {
   flex-direction: column;
   gap: 25px;
   overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
