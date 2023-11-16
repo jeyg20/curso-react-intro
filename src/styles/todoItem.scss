@@ -16,6 +16,15 @@ li {
   }
   
   span {
+    color: $primary-color;
     cursor: pointer;
+  }
+}
+
+.completed {
+  background-color: $primary-color;
+  text-decoration: line-through;
+  span {
+    color: $tertiary-color;
   }
 }
