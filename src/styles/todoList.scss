@@ -4,5 +4,6 @@ ul {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 38px;
+  gap: 25px;
+  overflow-y: scroll;
 }

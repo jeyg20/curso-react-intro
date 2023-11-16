@@ -5,9 +5,17 @@ li {
   grid-template-columns: 1fr 5fr 1fr;
   grid-template-rows: 1fr;
   border-radius: 18px;
-  height: 75px;
+  min-height: 65px;
   background-color: $primary-color-transparent;
   list-style: none;
   align-items: center;
   text-align: center;
+
+  p  {
+    text-align: left;
+  }
+  
+  span {
+    cursor: pointer;
+  }
 }

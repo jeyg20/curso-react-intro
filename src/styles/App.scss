@@ -28,15 +28,19 @@ body {
 }
 
 #root {
+  width: 100vw;
   min-width: 320px;
-  width: 430px;
-  height: 932px;
-  padding: 42px;
+  max-width: 425px;
+  height: 100vh;
+  min-height: 600px;
+  max-height: 800px;
+  padding: 15px 30px;
   border: solid #ffffff;
   border-radius: 10px;
   display: grid;
   justify-items: center;
   text-align: center;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2fr 10fr 1fr;
+  grid-template-rows: 1fr 1fr 10fr 1fr;
+  gap: 25px;
 }
