@@ -5,7 +5,7 @@ import { faCircleCheck, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 function TodoItem({ text, completed }) {
   return (
-    <li className={completed && 'completed'}>
+    <li className={completed? 'completed': null}>
       <span>
         <FontAwesomeIcon icon={completed? faCircleCheck: faCircle} size="lg" />
       </span>
