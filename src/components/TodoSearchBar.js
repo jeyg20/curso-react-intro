@@ -3,8 +3,8 @@ import '../styles/todoSearchBar.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
-function TodoSearchBar() {
-  const [searchValue, setSearchValue] = React.useState('');
+function TodoSearchBar({searchValue, setSearchValue}) {
+  
   return (
     <div className='input-container'>
       <input 
