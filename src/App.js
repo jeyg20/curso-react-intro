@@ -11,14 +11,24 @@ const defaultTodos = [
   { text: 'Learn React', completed: false },
   { text: 'Learn Redux', completed: false },
   { text: 'Learn React Router', completed: false },
-  { text: 'Learn GraphQL', completed: false },
+  { text: 'Learn GraphQL', completed: true },
 ]
 
 function App() {
+  const [todos, setTodos] = React.useState(defaultTodos);
+  const [searchValue, setSearchValue] = React.useState('');
+
+  // The emmet abbreviation "!!" turns the value into a boolean in case the returned one is as string, number etc..
+  const completedTodos = todos.filter(todo => !!todo.completed).length;
+  const totalTodos = todos.length;
+
   return (
     < >
-      <TodoCounter completed={3} total={5}/>
-      <TodoSearchBar />
+      <TodoCounter completed={completedTodos} total={totalTodos}/>
+      <TodoSearchBar 
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
       <TodoList>
         { defaultTodos.map((todo) => (
           <TodoItem key={todo.text} text={todo.text} completed={todo.completed} />
