@@ -5,8 +5,16 @@ import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 function TodoCreateButton() {
   return (
     <div className='add-btn-container'>
-      <button>
-        <FontAwesomeIcon icon={faCirclePlus} className='add-btn'/>
+      <button
+        className='add-btn'
+        onClick={
+          (event) => {
+            console.log("You've clicked the btn ")
+            console.log(event.target)
+          }
+        }
+      >
+        <FontAwesomeIcon icon={faCirclePlus} className='add-btn-icon'/>
       </button>
     </div>
   )
