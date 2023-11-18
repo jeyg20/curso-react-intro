@@ -1,5 +1,11 @@
 @import 'App';
 
+.todo-counter {
+  display: flex;
+  flex-direction: column;
+  font-size: 28rem;
+  justify-content: center;
+}
 h1 {
   font-size: 28rem;
   font-weight: 700;
