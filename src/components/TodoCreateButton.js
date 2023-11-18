@@ -1,23 +1,21 @@
-import '../styles/todoCreateButton.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import "../styles/todoCreateButton.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 
 function TodoCreateButton() {
   return (
-    <div className='add-btn-container'>
+    <div className="add-btn-container">
       <button
-        className='add-btn'
-        onClick={
-          (event) => {
-            console.log("You've clicked the btn ")
-            console.log(event.target)
-          }
-        }
+        className="add-btn"
+        onClick={(event) => {
+          console.log("You've clicked the btn ");
+          console.log(event.target);
+        }}
       >
-        <FontAwesomeIcon icon={faCirclePlus} className='add-btn-icon'/>
+        <FontAwesomeIcon icon={faCirclePlus} className="add-btn-icon" />
       </button>
     </div>
-  )
+  );
 }
 
-export { TodoCreateButton }
+export { TodoCreateButton };
