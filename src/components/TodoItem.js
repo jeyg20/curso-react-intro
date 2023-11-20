@@ -6,17 +6,18 @@ import { faCircleCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 function TodoItem(props) {
   return (
     <li className={props.completed ? "completed" : ""}>
-      <span>
+      <button onClick={props.onComplete}>
         <FontAwesomeIcon
           icon={props.completed ? faCircleCheck : faCircle}
-          size="lg"
-          onClick={props.onComplete}
-        />
-      </span>
-      <p>{props.text}</p>
-      <span>
-        <FontAwesomeIcon icon={faXmark} size="2xl" onClick={props.onDelete} />
-      </span>
+          className="complete-btn-icon"
+          />
+      </button>
+        <div className="text-container">
+          <p>{props.text}</p>
+        </div>
+      <button onClick={props.onDelete}>
+        <FontAwesomeIcon icon={faXmark} className="delete-btn-icon" />
+      </button>
     </li>
   );
 }
