@@ -3,7 +3,7 @@ import "../styles/todoCounter.scss";
 
 function TodoCounter({ total, completed }) {
   return (
-    <div class="todo-counter">
+    <div className="todo-counter">
       {completed === total ? (
         <>
           <h1>You have completed all your {total} todos</h1>
