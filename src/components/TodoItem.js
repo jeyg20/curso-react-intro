@@ -10,11 +10,11 @@ function TodoItem(props) {
         <FontAwesomeIcon
           icon={props.completed ? faCircleCheck : faCircle}
           className="complete-btn-icon"
-          />
+        />
       </button>
-        <div className="text-container">
-          <p>{props.text}</p>
-        </div>
+      <div className="text-container">
+        <p>{props.text}</p>
+      </div>
       <button onClick={props.onDelete}>
         <FontAwesomeIcon icon={faXmark} className="delete-btn-icon" />
       </button>

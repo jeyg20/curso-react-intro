@@ -1,16 +1,16 @@
-@import 'App';
+@import "App";
 
 .add-btn-container {
   width: 100%;
   display: flex;
   justify-content: flex-end;
   user-select: none;
-  
+
   button {
     border: none;
     outline: none;
     background-color: transparent;
-    
+
     .add-btn-icon {
       width: 45px;
       height: 45px;
@@ -22,12 +22,11 @@
 
 @media (hover: hover) {
   .add-btn-icon {
-      transform: rotate(0);
-      transition: .3s ease;
-    &:hover{
+    transform: rotate(0);
+    transition: 0.3s ease;
+    &:hover {
       transform: rotate(135deg);
-      zoom: 1.1
+      zoom: 1.1;
     }
   }
-  
 }
