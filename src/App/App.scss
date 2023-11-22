@@ -1,10 +1,4 @@
-$text-primary-color: #ffffff;
-$background-color: #121212;
-$primary-color: #c84646;
-$primary-color-transparent: rgb(200, 70, 70, 0.2);
-$secondary-color: #2d1a1a;
-$tertiary-color: #64b464;
-$paragraph-size: 16rem;
+@import "../common/_variables.scss";
 
 * {
   box-sizing: border-box;
@@ -14,7 +8,7 @@ $paragraph-size: 16rem;
 
 html {
   font-size: 6.25%;
-  background-color: #121212;
+  background-color: $background-color;
 }
 
 body {
@@ -35,7 +29,7 @@ body {
   min-height: 600px;
   max-height: 800px;
   padding: 15px 30px;
-  border: solid #ffffff;
+  border: solid 1px $primary-color-transparent;
   border-radius: 10px;
   display: grid;
   justify-items: center;
