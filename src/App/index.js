@@ -1,4 +1,4 @@
-import { AppUi } from "./AppUI";
+import { AppUi } from "./AppUi";
 import "./App.scss";
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
