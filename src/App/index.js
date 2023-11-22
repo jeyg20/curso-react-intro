@@ -1,10 +1,11 @@
-import { TodoCounter } from "./components/TodoCounter";
-import { TodoSearchBar } from "./components/TodoSearchBar";
-import { TodoList } from "./components/TodoList";
-import { TodoItem } from "./components/TodoItem";
-import { TodoCreateButton } from "./components/TodoCreateButton";
-import "./styles/App.scss";
-import React, { useState } from "react";
+import { TodoCounter } from "../components/TodoCounter";
+import { TodoSearchBar } from "../components/TodoSearchBar";
+import { TodoList } from "../components/TodoList";
+import { TodoItem } from "../components/TodoItem";
+import { TodoCreateButton } from "../components/TodoCreateButton";
+import "./App.scss";
+import React from "react";
+import { useLocalStorage } from "./useLocalStorage";
 
 // const defaultTodos = [
 //   {
@@ -19,21 +20,6 @@ import React, { useState } from "react";
 
 // localStorage.setItem("TODOS_V1", JSON.stringify(defaultTodos));
 // localStorage.removeItem("TODOS_V1");
-
-function useLocalStorage(itemName, initialValue) {
-  // The function passed to useState will only be executed the first time the component is rendered
-  const [item, setItem] = useState(
-    () => JSON.parse(localStorage.getItem(itemName)) || initialValue
-  );
-
-  const saveItem = (newItem) => {
-    setItem(newItem);
-    const stringifiedItem = JSON.stringify(newItem);
-    localStorage.setItem(itemName, stringifiedItem);
-  };
-
-  return [item, saveItem];
-}
 
 function App() {
   const [todos, saveTodos] = useLocalStorage("TODOS_V1", []);

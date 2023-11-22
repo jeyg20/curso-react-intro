@@ -1,4 +1,4 @@
-import "../styles/todoItem.scss";
+import "./TodoItem.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-regular-svg-icons";
 import { faCircleCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
