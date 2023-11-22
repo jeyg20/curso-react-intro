@@ -4,7 +4,7 @@ import { TodoList } from "./components/TodoList";
 import { TodoItem } from "./components/TodoItem";
 import { TodoCreateButton } from "./components/TodoCreateButton";
 import "./styles/App.scss";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 // const defaultTodos = [
 //   {
@@ -20,11 +20,23 @@ import React, { useEffect, useState } from "react";
 // localStorage.setItem("TODOS_V1", JSON.stringify(defaultTodos));
 // localStorage.removeItem("TODOS_V1");
 
-function App() {
+function useLocalStorage(itemName, initialValue) {
   // The function passed to useState will only be executed the first time the component is rendered
-  const [todos, setTodos] = useState(
-    () => JSON.parse(localStorage.getItem("TODOS_V1")) || []
+  const [item, setItem] = useState(
+    () => JSON.parse(localStorage.getItem(itemName)) || initialValue
   );
+
+  const saveItem = (newItem) => {
+    setItem(newItem);
+    const stringifiedItem = JSON.stringify(newItem);
+    localStorage.setItem(itemName, stringifiedItem);
+  };
+
+  return [item, saveItem];
+}
+
+function App() {
+  const [todos, saveTodos] = useLocalStorage("TODOS_V1", []);
 
   const [searchValue, setSearchValue] = React.useState("");
 
@@ -36,12 +48,6 @@ function App() {
   const searchedTodos = todos.filter((todo) =>
     todo.text.toLowerCase().includes(searchValue.toLowerCase())
   );
-
-  const saveTodos = (newTodos) => {
-    setTodos(newTodos);
-    const stringifiedTodos = JSON.stringify(newTodos);
-    localStorage.setItem("TODOS_V1", stringifiedTodos);
-  };
 
   const updateTodo = (text, actionCallback) => {
     const newTodos = [...todos];
