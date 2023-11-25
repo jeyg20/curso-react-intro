@@ -13,6 +13,11 @@ function AppUi(props) {
         setSearchValue={props.setSearchValue}
       />
       <TodoList>
+        {props.loading && <p>Loading...</p>}
+        {props.error && <p>An error has ocurred!...</p>}
+        {!props.loading && !props.searchedTodos.length && (
+          <p>There are no todos!</p>
+        )}
         {props.searchedTodos.map((todo) => (
           <TodoItem
             key={todo.text}
