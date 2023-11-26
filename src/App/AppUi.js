@@ -6,16 +6,13 @@ import { TodoCreateButton } from "../components/TodoCreateButton";
 import { TodosLoading } from "../components/TodosLoading";
 import { TodosError } from "../components/TodosError";
 import { TodosEmpty } from "../components/TodosEmpty";
-import { TodoContext } from "../TodoContext";
+import { TodoContext } from "../components/TodoContext";
 
-function AppUi(props) {
+function AppUi() {
   return (
     <>
       <TodoCounter />
-      <TodoSearchBar
-        searchValue={props.searchValue}
-        setSearchValue={props.setSearchValue}
-      />
+      <TodoSearchBar />
       <TodoContext.Consumer>
         {({ loading, error, searchedTodos, completeTodo, deleteTodo }) => (
           <TodoList>
