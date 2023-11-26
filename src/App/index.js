@@ -1,7 +1,7 @@
 import { AppUi } from "./AppUi";
 import "./App.scss";
 import React from "react";
-import { TodoProvider } from "../TodoContex";
+import { TodoProvider } from "../TodoContext";
 
 function App() {
   return (
