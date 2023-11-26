@@ -6,16 +6,12 @@ import { TodoCreateButton } from "../components/TodoCreateButton";
 import { TodosLoading } from "../components/TodosLoading";
 import { TodosError } from "../components/TodosError";
 import { TodosEmpty } from "../components/TodosEmpty";
-import { TodoContext } from "../TodoContex";
+import { TodoContext } from "../TodoContext";
 
 function AppUi(props) {
   return (
     <>
-      <TodoCounter
-        completed={props.completedTodos}
-        total={props.totalTodos}
-        isLoading={props.loading}
-      />
+      <TodoCounter />
       <TodoSearchBar
         searchValue={props.searchValue}
         setSearchValue={props.setSearchValue}
@@ -31,8 +27,8 @@ function AppUi(props) {
                 key={todo.text}
                 text={todo.text}
                 completed={todo.completed}
-                onComplete={() => props.completeTodo(todo.text)}
-                onDelete={() => props.deleteTodo(todo.text)}
+                onComplete={() => completeTodo(todo.text)}
+                onDelete={() => deleteTodo(todo.text)}
               />
             ))}
           </TodoList>
