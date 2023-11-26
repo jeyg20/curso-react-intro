@@ -1,22 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./TodoCounter.scss";
+import { TodoContext } from "../../TodoContex";
 
-function TodoCounter({ total, completed, isLoading }) {
+function TodoCounter() {
+  const { completedTodos, totalTodos, loading } = useContext(TodoContext);
+
   return (
     <div className="todo-counter">
-      {isLoading && <h1 className="loading-todos">Loading todos...</h1>}
-      {total === 0 && !isLoading && (
-        <h1>You don't have todos, create your first one</h1>
+      {loading && <h1 className="loading-todos">Loading todos...</h1>}
+
+      {totalTodos === 0 && !loading && (
+        <h1>You don't have any todos. Create your first one.</h1>
       )}
-      {total > 0 && completed === total && (
+
+      {totalTodos > 0 && completedTodos === totalTodos && (
         <>
-          <h1>You have completed all your {total} todos</h1>
+          <h1>You have completed all {totalTodos} todos</h1>
           <span>🎉</span>
         </>
       )}
-      {total > 0 && completed !== total && (
+
+      {totalTodos > 0 && completedTodos !== totalTodos && (
         <h1>
-          You have completed {completed} of {total} todos
+          You have completed {completedTodos} of {totalTodos} todos
         </h1>
       )}
     </div>
