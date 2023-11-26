@@ -3,21 +3,26 @@ import { TodoSearchBar } from "../components/TodoSearchBar";
 import { TodoList } from "../components/TodoList";
 import { TodoItem } from "../components/TodoItem";
 import { TodoCreateButton } from "../components/TodoCreateButton";
+import { TodosLoading } from "../components/TodosLoading";
+import { TodosError } from "../components/TodosError";
+import { TodosEmpty } from "../components/TodosEmpty";
 
 function AppUi(props) {
   return (
     <>
-      <TodoCounter completed={props.completedTodos} total={props.totalTodos} />
+      <TodoCounter
+        completed={props.completedTodos}
+        total={props.totalTodos}
+        isLoading={props.loading}
+      />
       <TodoSearchBar
         searchValue={props.searchValue}
         setSearchValue={props.setSearchValue}
       />
       <TodoList>
-        {props.loading && <p>Loading...</p>}
-        {props.error && <p>An error has ocurred!...</p>}
-        {!props.loading && !props.searchedTodos.length && (
-          <p>There are no todos!</p>
-        )}
+        {props.loading && <TodosLoading />}
+        {props.error && <TodosError />}
+        {!props.loading && !props.searchedTodos.length && <TodosEmpty />}
         {props.searchedTodos.map((todo) => (
           <TodoItem
             key={todo.text}
