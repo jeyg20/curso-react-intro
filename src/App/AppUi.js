@@ -6,6 +6,7 @@ import { TodoCreateButton } from "../components/TodoCreateButton";
 import { TodosLoading } from "../components/TodosLoading";
 import { TodosError } from "../components/TodosError";
 import { TodosEmpty } from "../components/TodosEmpty";
+import { TodoContext } from "../TodoContex";
 
 function AppUi(props) {
   return (
@@ -19,20 +20,24 @@ function AppUi(props) {
         searchValue={props.searchValue}
         setSearchValue={props.setSearchValue}
       />
-      <TodoList>
-        {props.loading && <TodosLoading />}
-        {props.error && <TodosError />}
-        {!props.loading && !props.searchedTodos.length && <TodosEmpty />}
-        {props.searchedTodos.map((todo) => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={() => props.completeTodo(todo.text)}
-            onDelete={() => props.deleteTodo(todo.text)}
-          />
-        ))}
-      </TodoList>
+      <TodoContext.Consumer>
+        {({ loading, error, searchedTodos, completeTodo, deleteTodo }) => (
+          <TodoList>
+            {loading && <TodosLoading />}
+            {error && <TodosError />}
+            {!loading && !searchedTodos.length && <TodosEmpty />}
+            {searchedTodos.map((todo) => (
+              <TodoItem
+                key={todo.text}
+                text={todo.text}
+                completed={todo.completed}
+                onComplete={() => props.completeTodo(todo.text)}
+                onDelete={() => props.deleteTodo(todo.text)}
+              />
+            ))}
+          </TodoList>
+        )}
+      </TodoContext.Consumer>
       <TodoCreateButton />
     </>
   );
