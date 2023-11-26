@@ -60,7 +60,7 @@ function App() {
 
   return (
     <AppUi
-      loafing={loading}
+      loading={loading}
       error={error}
       completeTodo={completeTodo}
       totalTodos={totalTodos}
