@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
 
+/**
+ * Custom hook for managing state in local storage.
+ *
+ * @param {string} itemName - The name of the item to be stored in local storage.
+ * @param {*} initialValue - The initial value of the item.
+ * @returns {Object} - An object containing the item, a function to save the item, a loading flag, and an error flag.
+ */
 function useLocalStorage(itemName, initialValue) {
   const [item, setItem] = useState(initialValue);
   const [loading, setLoading] = useState(true);
