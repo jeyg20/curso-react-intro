@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./TodoCounter.scss";
-import { TodoContext } from "../../TodoContext";
+import { TodoContext } from "../TodoContext";
 
 function TodoCounter() {
   const { completedTodos, totalTodos, loading } = useContext(TodoContext);
