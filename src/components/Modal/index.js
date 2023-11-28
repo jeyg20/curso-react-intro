@@ -4,9 +4,9 @@ import "./Modal.scss";
 
 const Modal = ({ children }) => {
   return ReactDOM.createPortal(
-    <div className="ModalBackground">
+    <dialog className="ModalBackground">
       <div className="ModalContainer">{children}</div>
-    </div>,
+    </dialog>,
     document.getElementById("modal")
   );
 };
