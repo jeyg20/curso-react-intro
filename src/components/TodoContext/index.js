@@ -20,6 +20,8 @@ function TodoProvider({ children }) {
 
   const [searchValue, setSearchValue] = React.useState("");
 
+  const [openModal, setOpenModal] = React.useState(false);
+
   // The emmet abbreviation "!!" turns the value into a boolean in case the returned one is as string, number etc..
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -63,6 +65,8 @@ function TodoProvider({ children }) {
         searchedTodos,
         completedTodos,
         deleteTodo,
+        openModal,
+        setOpenModal,
       }}
     >
       {children}
