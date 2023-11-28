@@ -5,6 +5,7 @@ form {
   flex-direction: column;
   align-items: center;
   padding: 10px;
+  color: $text-primary-color;
 
   label {
     font-weight: bold;
@@ -13,12 +14,32 @@ form {
   }
 
   textarea {
+    font-size: 16rem;
     width: 100%;
-    height: 100px;
+    min-height: 150px;
+    height: auto;
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 5px;
     resize: vertical;
+    background-color: $primary-color-transparent;
+    color: $text-primary-color;
+    border: none;
+
+    /* Apply styles to the scrollbar */
+    &::-webkit-scrollbar {
+      width: 10px;
+      background-color: $background-color-transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $primary-color;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(200, 70, 70, 0.6);
+    }
   }
 
   .Container-btn {
@@ -30,9 +51,8 @@ form {
     .TodoForm-btn {
       padding: 10px 20px;
       margin: 5px;
-      width: 86px;
       border: none;
-      border-radius: 13px;
+      border-radius: 10px;
       cursor: pointer;
       transition: opacity 0.15s ease-in-out;
       color: $text-primary-color;
