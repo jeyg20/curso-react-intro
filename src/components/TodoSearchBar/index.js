@@ -7,7 +7,7 @@ import { TodoContext } from "../TodoContext";
 function TodoSearchBar() {
   const { searchValue, setSearchValue } = useContext(TodoContext);
   return (
-    <div className="input-container">
+    <search className="input-container">
       <input
         type="text"
         placeholder="Search..."
@@ -20,7 +20,7 @@ function TodoSearchBar() {
         }}
       />
       <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
-    </div>
+    </search>
   );
 }
 
