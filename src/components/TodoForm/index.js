@@ -6,12 +6,6 @@ const TodoForm = () => {
   const { setOpenModal, addTodo } = useContext(TodoContext);
   const [inputValue, setInputValue] = useState("");
 
-  const handleCancel = () => {
-    // Add your logic here to handle canceling the todo
-    console.log("Todo canceled");
-    setInputValue("");
-  };
-
   return (
     <form
       onSubmit={(event) => {
@@ -31,7 +25,9 @@ const TodoForm = () => {
         <button
           type="button"
           className="TodoForm-btn TodoForm-btn--cancel"
-          onClick={handleCancel}
+          onClick={() => {
+            setOpenModal((state) => !state);
+          }}
         >
           Cancel
         </button>
