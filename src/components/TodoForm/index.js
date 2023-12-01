@@ -32,7 +32,7 @@ const TodoForm = () => {
           Cancel
         </button>
         <button
-          type="submit"
+          type="button"
           className="TodoForm-btn TodoForm-btn--add"
           onClick={() => {
             setOpenModal((state) => !state);
