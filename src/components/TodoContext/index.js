@@ -22,6 +22,15 @@ function TodoProvider({ children }) {
 
   const [openModal, setOpenModal] = React.useState(false);
 
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({
+      text,
+      completed: false,
+    });
+    saveTodos(newTodos);
+  };
+
   // The emmet abbreviation "!!" turns the value into a boolean in case the returned one is as string, number etc..
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -67,6 +76,7 @@ function TodoProvider({ children }) {
         deleteTodo,
         openModal,
         setOpenModal,
+        addTodo,
       }}
     >
       {children}

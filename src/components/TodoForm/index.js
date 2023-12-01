@@ -1,18 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./TodoForm.scss";
+import { TodoContext } from "../TodoContext";
 
 const TodoForm = () => {
+  const { setOpenModal, addTodo } = useContext(TodoContext);
   const [inputValue, setInputValue] = useState("");
-
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleAddTodo = () => {
-    // Add your logic here to handle adding the todo
-    console.log("Todo added:", inputValue);
-    setInputValue("");
-  };
 
   const handleCancel = () => {
     // Add your logic here to handle canceling the todo
@@ -21,24 +13,35 @@ const TodoForm = () => {
   };
 
   return (
-    <form>
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+      }}
+    >
       <label htmlFor="">Write you new todo</label>
       <textarea
         type="text"
         value={inputValue}
-        onChange={handleInputChange}
         placeholder="Buy groceries"
+        onChange={(event) => {
+          setInputValue(event.target.value);
+        }}
       />
       <div className="Container-btn">
         <button
+          type="button"
           className="TodoForm-btn TodoForm-btn--cancel"
           onClick={handleCancel}
         >
           Cancel
         </button>
         <button
+          type="submit"
           className="TodoForm-btn TodoForm-btn--add"
-          onClick={handleAddTodo}
+          onClick={() => {
+            setOpenModal((state) => !state);
+            addTodo(inputValue);
+          }}
         >
           Add
         </button>
