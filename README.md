@@ -1,5 +1,9 @@
 # React Todo App 🚀
 
+<div align="center">
+  <img src="https://github.com/jeyg20/react-todo-app/assets/36717981/d165a4c0-8ea7-416a-b3eb-974be66890ea" alt="React Todo App" width="350">
+</div>
+
 Welcome to the React Todo App, a fork of the [curso-react-intro](https://github.com/platzi/curso-react-intro) project. This application provides users with a streamlined interface for managing tasks effortlessly. Whether you're creating new tasks, marking them as completed, or deleting them, the app ensures a user-friendly experience.
 
 ## Try it Out 🔗
