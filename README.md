@@ -1,33 +1,30 @@
-# Clone repository of [curso-react-intro](https://github.com/platzi/curso-react-intro)
+# React Todo App 🚀
 
-## Available Scripts
+Welcome to the React Todo App, a fork of the [curso-react-intro](https://github.com/platzi/curso-react-intro) project. This application provides users with a streamlined interface for managing tasks effortlessly. Whether you're creating new tasks, marking them as completed, or deleting them, the app ensures a user-friendly experience.
+
+## Try it Out 🔗
+Check out the live application [here](https://jeyg20.github.io/react-todo-app/).
+
+## Getting Started 🛠️
 
 In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Launches the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will automatically reload when you make changes, and lint errors will be visible in the console.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production in the `build` folder. This process bundles React in production mode, optimizing the build for optimal performance. The resulting app is ready for deployment.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For more information on deployment, check the [official documentation](https://facebook.github.io/create-react-app/docs/deployment).
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Note: This is a one-way operation. Once you `eject`, there's no turning back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you're dissatisfied with the build tool and configuration choices, you can use `eject` to gain full control over them. This command copies all configuration files and transitive dependencies (webpack, Babel, ESLint, etc.) into your project. While all commands except `eject` will still work, they'll now point to the copied scripts.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+You don't have to use `eject`; the curated feature set is suitable for small and medium deployments. However, the flexibility to customize is there when you're ready for it.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Feel free to explore and enhance the React Todo App according to your preferences! 🚀
