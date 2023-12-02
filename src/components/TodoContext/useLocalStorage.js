@@ -26,7 +26,6 @@ function useLocalStorage(itemName, initialValue) {
           parsedItem = JSON.parse(localStorageItem);
           setItem(parsedItem);
         }
-        console.log(initialValue);
 
         setLoading(false);
       } catch (error) {
