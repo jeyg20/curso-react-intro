@@ -25,7 +25,6 @@ function AppUi() {
     setOpenDetailTodo,
     setSelectedTodo,
   } = useContext(TodoContext);
-
   return (
     <>
       <TodoCounter />
@@ -34,13 +33,13 @@ function AppUi() {
         {loading && <TodosLoading />}
         {error && <TodosError />}
         {!loading && !searchedTodos.length && <TodosEmpty />}
-        {searchedTodos.map((todo, index) => (
+        {searchedTodos.map((todo) => (
           <TodoItem
-            key={index}
+            key={todo.id}
             text={todo.text}
             completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
+            onComplete={() => completeTodo(todo.id)}
+            onDelete={() => deleteTodo(todo.id)}
             setOpenDetailTodo={setOpenDetailTodo}
             setSelectedTodo={setSelectedTodo}
           />
