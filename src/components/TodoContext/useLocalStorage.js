@@ -5,23 +5,27 @@ import { useEffect, useState } from "react";
  *
  * @param {string} itemName - The name of the item to be stored in local storage.
  * @param {*} initialValue - The initial value of the item.
+ * @param {Function} idGenerator - A function to generate an id for the item.
  * @returns {Object} - An object containing the item, a function to save the item, a loading flag, and an error flag.
  */
-function useLocalStorage(itemName, initialValue) {
+function useLocalStorage(itemName, initialValue, idGenerator) {
   const [item, setItem] = useState(initialValue);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    // The function passed to useEffect will only be executed the first time the component is rendered
+    // useEffect function will only be executed the first time the component is rendered
     setTimeout(() => {
       try {
         const localStorageItem = localStorage.getItem(itemName);
         let parsedItem;
 
         if (!localStorageItem) {
-          localStorage.setItem(itemName, JSON.stringify(initialValue));
-          parsedItem = initialValue;
+          const uniqueId = idGenerator();
+          const newItem = { id: uniqueId, ...initialValue };
+
+          localStorage.setItem(itemName, JSON.stringify(newItem));
+          parsedItem = newItem;
         } else {
           parsedItem = JSON.parse(localStorageItem);
           setItem(parsedItem);
