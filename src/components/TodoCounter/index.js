@@ -15,7 +15,7 @@ function TodoCounter() {
 
       {totalTodos > 0 && completedTodos === totalTodos && (
         <>
-          <h1>You have completed all {totalTodos} todos</h1>
+          <h1>You have completed all your todos</h1>
           <span>🎉</span>
         </>
       )}
