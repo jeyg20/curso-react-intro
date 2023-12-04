@@ -4,22 +4,24 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   padding: 15px;
   color: $text-primary-color;
+  height: 100%;
+  gap: 15px;
 
   label {
     font-weight: bold;
-    margin-bottom: 20px;
     font-size: 20rem;
   }
 
-  textarea {
+  .TodoForm-textarea {
     font-size: 16rem;
     width: 100%;
     min-height: 150px;
-    height: auto;
+    height: fit-content;
+    max-height: 100%;
     padding: 5px;
-    margin-bottom: 10px;
     border-radius: 5px;
     resize: none;
     background-color: $primary-color-transparent;
@@ -49,6 +51,7 @@ form {
     width: 100%;
 
     .TodoForm-btn {
+      width: 95px;
       padding: 10px 20px;
       margin: 5px;
       border: none;
