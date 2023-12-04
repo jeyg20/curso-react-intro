@@ -1,0 +1,46 @@
+@import "../../App/App.scss";
+
+.detail-content {
+  background-color: $background-color-transparent;
+  padding: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  max-height: 100%;
+
+  .detail-text-container {
+    min-height: 50px;
+    height: fit-content;
+    max-height: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: $primary-color-transparent;
+    color: $text-primary-color;
+    border: none;
+
+    p {
+      font-size: 16rem;
+      font-weight: 400;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+      overflow-y: scroll;
+      max-height: 100%;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+        background-color: $background-color-transparent;
+      }
+    }
+  }
+
+  button {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
