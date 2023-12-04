@@ -1,5 +1,6 @@
 import React, { createContext } from "react";
 import { useLocalStorage } from "./useLocalStorage";
+import { v4 as uuidv4 } from "uuid";
 
 const TodoContext = createContext();
 
@@ -11,6 +12,7 @@ const TodoContext = createContext();
  * @returns {React.ReactNode} The rendered component.
  */
 function TodoProvider({ children }) {
+  const generateUniqueId = () => uuidv4();
   const {
     item: todos,
     saveItem: saveTodos,
@@ -25,7 +27,9 @@ function TodoProvider({ children }) {
 
   const addTodo = (text) => {
     const newTodos = [...todos];
+    const uniqueId = generateUniqueId();
     newTodos.push({
+      id: uniqueId,
       text,
       completed: false,
     });
@@ -41,9 +45,9 @@ function TodoProvider({ children }) {
     todo.text.toLowerCase().includes(searchValue.toLowerCase())
   );
 
-  const updateTodo = (text, actionCallback) => {
+  const updateTodo = (id, actionCallback) => {
     const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    const todoIndex = newTodos.findIndex((todo) => todo.id === id);
 
     if (todoIndex !== false) {
       actionCallback(newTodos, todoIndex);
@@ -51,14 +55,14 @@ function TodoProvider({ children }) {
     }
   };
 
-  const completeTodo = (text) => {
-    updateTodo(text, (todos, index) => {
+  const completeTodo = (id) => {
+    updateTodo(id, (todos, index) => {
       todos[index].completed = !todos[index].completed;
     });
   };
 
-  const deleteTodo = (text) => {
-    updateTodo(text, (todos, index) => {
+  const deleteTodo = (id) => {
+    updateTodo(id, (todos, index) => {
       todos.splice(index, 1);
     });
   };
@@ -80,7 +84,7 @@ function TodoProvider({ children }) {
         openDetailTodo,
         setOpenDetailTodo,
         addTodo,
-        selectedTodo, 
+        selectedTodo,
         setSelectedTodo,
       }}
     >
