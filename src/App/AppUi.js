@@ -10,6 +10,7 @@ import { TodoContext } from "../components/TodoContext";
 import { useContext } from "react";
 import { Modal } from "../components/Modal";
 import { TodoForm } from "../components/TodoForm";
+import { TodoDetail } from "../components/TodoDetail";
 
 function AppUi() {
   const {
@@ -18,9 +19,13 @@ function AppUi() {
     searchedTodos,
     completeTodo,
     deleteTodo,
-    openModal,
-    setOpenModal,
+    openCreateTodo,
+    setOpenCreateTodo,
+    openDetailTodo,
+    setOpenDetailTodo,
+    setSelectedTodo,
   } = useContext(TodoContext);
+
   return (
     <>
       <TodoCounter />
@@ -29,21 +34,32 @@ function AppUi() {
         {loading && <TodosLoading />}
         {error && <TodosError />}
         {!loading && !searchedTodos.length && <TodosEmpty />}
-        {searchedTodos.map((todo) => (
+        {searchedTodos.map((todo, index) => (
           <TodoItem
-            key={todo.text}
+            key={index}
             text={todo.text}
             completed={todo.completed}
             onComplete={() => completeTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
+            setOpenDetailTodo={setOpenDetailTodo}
+            setSelectedTodo={setSelectedTodo}
           />
         ))}
       </TodoList>
-      <TodoCreateButton setOpenModal={setOpenModal} />
-      {openModal && (
-        <Modal>
-          <TodoForm />
-        </Modal>
+      <TodoCreateButton setOpenCreateTodo={setOpenCreateTodo} />
+      {openCreateTodo && (
+        <div>
+          <Modal>
+            <TodoForm />
+          </Modal>
+        </div>
+      )}
+      {openDetailTodo && (
+        <div>
+          <Modal>
+            <TodoDetail setOpenDetailTodo={setOpenDetailTodo} />
+          </Modal>
+        </div>
       )}
     </>
   );
