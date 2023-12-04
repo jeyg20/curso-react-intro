@@ -3,7 +3,7 @@ import "./TodoForm.scss";
 import { TodoContext } from "../TodoContext";
 
 const TodoForm = () => {
-  const { setOpenModal, addTodo } = useContext(TodoContext);
+  const { setOpenCreateTodo, addTodo } = useContext(TodoContext);
   const [inputValue, setInputValue] = useState("");
 
   return (
@@ -14,9 +14,10 @@ const TodoForm = () => {
     >
       <label htmlFor="">Write you new todo</label>
       <textarea
+        className="TodoForm-textarea"
         type="text"
         value={inputValue}
-        placeholder="Buy groceries"
+        placeholder="Buy groceries..."
         onChange={(event) => {
           setInputValue(event.target.value);
         }}
@@ -26,7 +27,7 @@ const TodoForm = () => {
           type="button"
           className="TodoForm-btn TodoForm-btn--cancel"
           onClick={() => {
-            setOpenModal((state) => !state);
+            setOpenCreateTodo((state) => !state);
           }}
         >
           Cancel
@@ -35,7 +36,7 @@ const TodoForm = () => {
           type="button"
           className="TodoForm-btn TodoForm-btn--add"
           onClick={() => {
-            setOpenModal((state) => !state);
+            setOpenCreateTodo((state) => !state);
             addTodo(inputValue);
           }}
         >
